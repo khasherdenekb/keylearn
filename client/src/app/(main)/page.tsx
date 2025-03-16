@@ -1,7 +1,7 @@
-import Landing from "./(main)/landing/page"
 import { Header } from "@/components/layout/nav/header"
+import Landing from "./landing/page"
 
-const Home = () => {
+export default function Home() {
   return (
     <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-10">
       <Header />
@@ -11,5 +11,3 @@ const Home = () => {
     </div>
   )
 }
-
-export default Home

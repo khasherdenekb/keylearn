@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { DM_Sans } from "next/font/google"
 import "./globals.css"
+import QueryProvider from "@/providers/provider"
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -20,7 +21,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${dmSans.className} antialiased`}>{children}</body>
+      <body className={`${dmSans.className} antialiased`}>
+        <QueryProvider>
+          <div className="mx-auto h-full w-full items-center justify-center">
+            {children}
+          </div>
+        </QueryProvider>
+      </body>
     </html>
   )
 }
